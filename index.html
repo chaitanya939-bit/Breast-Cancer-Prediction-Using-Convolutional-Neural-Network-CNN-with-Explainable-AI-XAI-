@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Breast Cancer Prediction Using CNN & XAI</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f3f8ff;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:linear-gradient(90deg,#0f4c81,#1a73e8);
+}
+
+.navbar-brand{
+font-weight:600;
+font-size:22px;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("https://images.unsplash.com/photo-1579684385127-1ef15d508118");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+text-align:center;
+color:white;
+
+}
+
+.hero h1{
+font-size:52px;
+font-weight:600;
+}
+
+.hero p{
+font-size:18px;
+margin-top:20px;
+}
+
+.hero-buttons a{
+margin:10px;
+padding:14px 30px;
+font-size:17px;
+border-radius:30px;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 0;
+}
+
+.section-title{
+font-weight:600;
+margin-bottom:40px;
+color:#0f4c81;
+}
+
+/* FEATURE CARDS */
+
+.feature-card{
+
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0px 8px 25px rgba(0,0,0,0.08);
+transition:0.4s;
+
+}
+
+.feature-card:hover{
+transform:translateY(-8px);
+box-shadow:0px 12px 30px rgba(0,0,0,0.12);
+}
+
+.feature-icon{
+font-size:40px;
+color:#1a73e8;
+margin-bottom:15px;
+}
+
+/* TECHNOLOGY */
+
+.tech-box{
+background:#ffffff;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 5px 20px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#0f4c81;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+<i class="fa-solid fa-heart-pulse"></i>
+AI Breast Cancer Detection
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Breast Cancer Prediction Using CNN & Explainable AI</h1>
+
+<p>
+Advanced AI-powered system for early breast cancer detection
+from mammogram images using deep learning and explainable AI.
+</p>
+
+<div class="hero-buttons">
+
+<a href="/login" class="btn btn-primary">User Login</a>
+
+<a href="/register" class="btn btn-success">User Registration</a>
+
+<a href="/admin" class="btn btn-warning">Admin Panel</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<div class="container">
+
+<h2 class="text-center section-title">About the System</h2>
+
+<p class="text-center">
+
+Breast cancer is one of the leading causes of death among women worldwide.
+Early detection significantly improves survival rates and treatment outcomes.
+
+This project presents an AI-powered breast cancer prediction system that uses
+Convolutional Neural Networks (CNN) to automatically analyze mammogram images
+and classify tumors as benign or malignant.
+
+The system also integrates Explainable Artificial Intelligence (XAI) techniques
+such as Grad-CAM to visualize important regions of the image that influenced
+the model's decision. This enhances transparency, interpretability, and trust
+for healthcare professionals.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section id="features" class="section bg-light">
+
+<div class="container">
+
+<h2 class="text-center section-title">System Features</h2>
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h5>Deep Learning Analysis</h5>
+
+<p>
+CNN-based medical image analysis for accurate tumor detection.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-microscope"></i>
+</div>
+
+<h5>Medical Image Processing</h5>
+
+<p>
+Processes mammogram scans and extracts critical features.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-eye"></i>
+</div>
+
+<h5>Explainable AI</h5>
+
+<p>
+Grad-CAM heatmaps highlight regions responsible for predictions.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+<h5>Risk Prediction</h5>
+
+<p>
+Predicts benign or malignant tumors with risk interpretation.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-file-medical"></i>
+</div>
+
+<h5>Medical Report</h5>
+
+<p>
+Downloadable AI-generated PDF medical diagnostic report.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+<i class="fa-solid fa-lock"></i>
+</div>
+
+<h5>Secure System</h5>
+
+<p>
+User authentication and secure healthcare data handling.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section id="technology" class="section">
+
+<div class="container">
+
+<h2 class="text-center section-title">Technology Stack</h2>
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+
+<div class="tech-box">
+
+<h5>Deep Learning</h5>
+
+<p>CNN Architecture</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="tech-box">
+
+<h5>Explainable AI</h5>
+
+<p>Grad-CAM Visualization</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="tech-box">
+
+<h5>Backend</h5>
+
+<p>Python Flask / TensorFlow</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="tech-box">
+
+<h5>Frontend</h5>
+
+<p>HTML5 CSS3 Bootstrap JS</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+AI Breast Cancer Detection System |
+CNN + Explainable AI |
+Healthcare Artificial Intelligence
+
+</p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

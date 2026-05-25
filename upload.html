@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Upload Mammogram | Breast Cancer AI System</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f4f8ff;
+}
+
+/* HEADER */
+
+.navbar{
+background:linear-gradient(90deg,#0f4c81,#1a73e8);
+}
+
+.navbar-brand{
+font-weight:600;
+}
+
+/* UPLOAD SECTION */
+
+.upload-section{
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1581595219315-a187dd40c322");
+
+background-size:cover;
+background-position:center;
+
+padding:100px 0;
+
+}
+
+/* CARD */
+
+.upload-card{
+
+background:white;
+padding:40px;
+border-radius:12px;
+
+width:450px;
+margin:auto;
+
+box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+
+text-align:center;
+
+}
+
+.upload-card h2{
+color:#0f4c81;
+margin-bottom:20px;
+}
+
+.upload-icon{
+font-size:40px;
+color:#1a73e8;
+margin-bottom:15px;
+}
+
+/* FILE INPUT */
+
+.form-control{
+padding:12px;
+border-radius:8px;
+}
+
+/* BUTTON */
+
+.btn-predict{
+width:100%;
+padding:12px;
+background:#1a73e8;
+border:none;
+font-size:16px;
+border-radius:8px;
+color:white;
+}
+
+.btn-predict:hover{
+background:#0f4c81;
+}
+
+.back-btn{
+margin-top:15px;
+display:block;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f4c81;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="/">
+<i class="fa-solid fa-heart-pulse"></i>
+Breast Cancer AI System
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="/dashboard">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="/upload">Upload</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/history">History</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/logout">Logout</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- UPLOAD SECTION -->
+
+<section class="upload-section">
+
+<div class="upload-card">
+
+<div class="upload-icon">
+<i class="fa-solid fa-file-medical"></i>
+</div>
+
+<h2>Upload Mammogram Image</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file"
+name="image"
+class="form-control"
+accept="image/*"
+required>
+
+<br>
+
+<button type="submit"
+class="btn btn-predict">
+
+<i class="fa-solid fa-brain"></i>
+Predict using CNN
+
+</button>
+
+</form>
+
+<a href="/dashboard"
+class="btn btn-secondary back-btn">
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+Breast Cancer Prediction System Using CNN & Explainable AI (XAI) |
+AI Healthcare Diagnostic Platform
+
+</p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

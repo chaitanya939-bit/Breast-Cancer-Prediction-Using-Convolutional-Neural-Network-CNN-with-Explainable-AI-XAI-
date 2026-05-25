@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explainable AI Breast Cancer Analysis</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f4f8ff;
+}
+
+/* HEADER */
+
+.navbar{
+background:linear-gradient(90deg,#0f4c81,#1a73e8);
+}
+
+.navbar-brand{
+font-weight:600;
+}
+
+/* SECTION */
+
+.analysis-section{
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1581595219315-a187dd40c322");
+
+background-size:cover;
+background-position:center;
+
+padding:70px 0;
+
+}
+
+/* MAIN CARD */
+
+.analysis-card{
+
+background:white;
+padding:40px;
+border-radius:12px;
+
+width:85%;
+margin:auto;
+
+box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+
+text-align:center;
+
+}
+
+.analysis-card h2{
+color:#0f4c81;
+margin-bottom:20px;
+}
+
+/* IMAGES */
+
+.images{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.images img{
+border-radius:10px;
+}
+
+/* INFO BOX */
+
+.info-box{
+background:#f8f9ff;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+text-align:left;
+}
+
+/* RISK BAR */
+
+.risk-bar{
+width:70%;
+margin:auto;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+height:25px;
+margin-top:10px;
+}
+
+.risk-fill{
+height:100%;
+text-align:center;
+color:white;
+line-height:25px;
+font-weight:bold;
+}
+
+/* BUTTON */
+
+.btn-custom{
+margin-top:15px;
+padding:10px 18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f4c81;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="/">
+<i class="fa-solid fa-heart-pulse"></i>
+Breast Cancer AI System
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="/dashboard">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/upload">Upload</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="#">XAI Analysis</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/logout">Logout</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ANALYSIS SECTION -->
+
+<section class="analysis-section">
+
+<div class="analysis-card">
+
+<h2>Explainable AI Breast Cancer Analysis</h2>
+
+<h4>Prediction Result : {{result}}</h4>
+
+<h5>Confidence Level : {{confidence}}%</h5>
+
+
+{% if result == "Malignant" %}
+
+<h4>Risk Level : <span style="color:{{risk_color}}">{{risk_level}}</span></h4>
+
+<div class="risk-bar">
+
+<div class="risk-fill"
+style="width:{{risk_score}}%; background:{{risk_color}}">
+
+{{risk_score|round(2)}}%
+
+</div>
+
+</div>
+
+{% endif %}
+
+<br>
+
+<h5>Detected Suspicious Regions : {{regions}}</h5>
+
+
+<!-- Images -->
+
+<div class="images">
+
+<div>
+
+<h5>Original Image</h5>
+
+<img src="/{{original}}" width="300">
+
+</div>
+
+
+<div>
+
+<h5>Grad-CAM Visualization</h5>
+
+<img src="/{{heatmap}}" width="300">
+
+</div>
+
+</div>
+
+
+<!-- XAI Explanation -->
+
+<div class="info-box">
+
+<h4>Explainable AI Interpretation</h4>
+
+<p>{{explanation}}</p>
+
+</div>
+
+
+<!-- Medical Interpretation -->
+
+<div class="info-box">
+
+<h4>Medical Interpretation</h4>
+
+<p>{{treatment}}</p>
+
+</div>
+
+
+<!-- Suggestions -->
+
+<div class="info-box">
+
+<h4>Suggestions & Recommendations</h4>
+
+<p>{{suggestions}}</p>
+
+</div>
+
+
+<!-- Disclaimer -->
+
+<div class="info-box">
+
+<h4>Medical Disclaimer</h4>
+
+<p>
+
+This AI-based system provides predictive analysis for educational
+and research purposes only. It should not replace professional
+medical diagnosis. Always consult a qualified healthcare professional
+for accurate diagnosis and treatment.
+
+</p>
+
+</div>
+
+
+<a href="/download_report?
+original={{original}}&
+heatmap={{heatmap}}&
+result={{result}}&
+confidence={{confidence}}&
+risk_level={{risk_level}}&
+explanation={{explanation}}&
+treatment={{treatment}}&
+suggestions={{suggestions}}"
+class="btn btn-success btn-custom">
+
+<i class="fa-solid fa-file-pdf"></i>
+Download AI Medical Report
+
+</a>
+
+<br>
+
+<a href="/dashboard"
+class="btn btn-secondary btn-custom">
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+Breast Cancer Prediction System Using CNN & Explainable AI (XAI) |
+AI Healthcare Diagnostic Platform
+
+</p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
