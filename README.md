@@ -1,0 +1,2 @@
+# Breast-Cancer-Prediction-Using-Convolutional-Neural-Network-CNN-with-Explainable-AI-XAI-
+Developed an AI-based Breast Cancer Prediction System using Convolutional Neural Networks (CNN) and Explainable AI (Grad-CAM) for medical image analysis. The system classifies tumors as benign or malignant, provides visual explanations, performs risk assessment, and enables report generation through a Flask-based web application.
