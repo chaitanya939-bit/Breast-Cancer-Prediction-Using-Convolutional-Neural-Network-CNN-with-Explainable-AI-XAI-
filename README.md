@@ -8,8 +8,6 @@ A Flask-based web application was developed to provide an interactive platform w
 
 Technologies used include Python, TensorFlow, Keras, OpenCV, Flask, HTML, CSS, JavaScript, and MySQL. This project demonstrates the application of AI in healthcare to support early diagnosis, improve decision-making, and deliver transparent and reliable diagnostic assistance.
 
-in 100 words
 
-Project Description (100 Words)
 
 Breast Cancer Prediction Using Convolutional Neural Network (CNN) with Explainable AI (XAI) is an AI-powered healthcare project developed to support early breast cancer detection through medical image analysis. The system uses Convolutional Neural Networks (CNN) to classify breast images as Benign or Malignant with improved accuracy. To increase transparency and trust, Explainable AI (Grad-CAM) is integrated to generate heatmaps that highlight regions influencing predictions. A Flask-based web application enables image upload, prediction visualization, risk assessment, and report generation. Technologies used include Python, TensorFlow, Keras, OpenCV, HTML, CSS, JavaScript, and MySQL.
